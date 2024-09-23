@@ -1,42 +1,101 @@
+<?php
+$currentPage = 'login_1';
+include 'nav-login.php';
+
+$error = '';
+if (isset($_GET['error'])) {
+	$error = htmlspecialchars($_GET['error']); // Use htmlspecialchars to avoid XSS attacks
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="Keywords" content="Gannet Beach Adventures, birds, NZ"/>
+		<meta name="Author" content="Samia Jabbar"/>
+		<meta name="Description" content="Home page, gannet beach adventures"/>
+		<link rel="icon" type="image/x-icon" href="images/bird1.ico">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+		<title>Login</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<head>
-	<meta charset="utf-8">
-		
-	<meta name="Author" content="Samia Jabbar">
-	<meta name="Keywords" content="HTML, CSS, PHP, SQL, JavaScript">
-	<meta name="Description" content="13CSI Music Database">
-	
-	<title>Music Database</title>
-		
-	<link rel="stylesheet" href="css/style.css"/>
-			
-</head>
-
-	<!-- main webpage content starts here -->  
-  <body>
-  
-	<div class="grid-container">
-	
-	<div class="header">Header</div>
-	
-	<div class="sidebar">Sidebar</div>
-	
-	<div class="content">
-		<div class="scroll-area">
-		
-		<h1><center>Login Page</center></h1>
-		
-		<h3>Sub Heading</h3>
-		<hr></hr>
-		<p></p>
+		<!-- font links-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&family=Lilita+One&display=swap" rel="stylesheet">
+	</head>
+	<style>
+		body{
+			background-image: url('images/login_img13.png'); background-repeat: no-repeat; background-size: cover;height: 100vh;
+		}
+	</style>
+	<div class="body2" style="margin-top:-10px;">
+		<img class="image1" src="images/login_img_r1.png"  style = "height:180vw">
+		<?php
+		require "nav-login.php";
+		?>
+		<div id="main2" class="main2">
+			<div class="slideshow-container">
+				<div class="main-slider">
+					<div class="mySlides fade" id="s1">
+						<img src="images/login_img13.png" style="height:100%;">
+					</div>
+				</div>
+			</div>
 		</div>
-    </div>
-	
-	<div class="footer">Footer</div>
-    
-	</div>
-	
-  </body>
+		<div class="login1">
+			<div class="text2">
+				<h1>Login</h1>
+				<form action="login1.php" method="post">
+					<div class="Username">
+						<input class="login_input" type="text" name="username" placeholder="username" style="background-image: url('images/iconn.png'); background-position: 10px 18px; background-repeat:no-repeat; padding: 12px 20px 12px 48px;" required>
+						<hr>
+					</div>
+					<div class="Password">
+						<input class="login_input" input id= "password"type="password" name="password" placeholder="password" style="background-image: url('images/iconn.png'); background-position: 10px 18px; background-repeat:no-repeat; padding: 12px 20px 12px 48px;" required>
+						<img id="togglePassword" src="images/iconn.png" alt="Toggle Password" style="position: absolute; right: 110px; top: 62%; transform: translateY(-50%); cursor: pointer; width: 20px; height: 20px;">
+						<hr>
+					</div>
+					<button type="submit">Submit</button>
+					<?php if (!empty($error)): ?>
+					<p style="color: red;"><?php echo $error; ?></p>
+					<?php endif; ?>
+					<p style="margin-top: 210px;">© Samia Jabbar 2024</p>
+				</form>
+			</div>
+			<div class="image_l">
+				<img src="images/login_img.png" alt="Login Image">
+			</div>
+		</div>
+
+
+		<script>
+			let slides = document.getElementsByClassName("mySlides");
+			slides[0].style.display = "block";
+
+			function handleResize() {
+				const body = document.body;
+				if (window.innerWidth <= 675) {
+					body.classList.add('fade-in-active');
+				} else {
+					body.classList.remove('fade-in-active');
+				}
+			}
+
+			document.getElementById('togglePassword').addEventListener('click', function() {
+				const passwordField = document.getElementById('password');
+				const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+				passwordField.setAttribute('type', type);
+				this.textContent = type === 'password' ? 'Show' : 'Hide';
+			});
+
+			// Initial check
+			handleResize();
+
+			// Add event listener for window resize
+			window.addEventListener('resize', handleResize);
+		</script>
+		</body>
 </html>
