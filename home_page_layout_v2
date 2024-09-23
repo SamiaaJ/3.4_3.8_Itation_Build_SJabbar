@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<?php
+session_start();
+if(!isset($_SESSION['login_user'])){
+	header("location:login_1.php");
+	exit();
+}
+else{
+	$un_name = $_SESSION['login_user'];
+}
+?>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="Keywords" content="Gannet Beach Adventures, birds, NZ"/>
+	<meta name="Author" content="Samia Jabbar"/>
+	<meta name="Description" content="Home page, gannet beach adventures"/>
+	<link rel="icon" type="image/x-icon" href="images/bird1.ico">
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+	<title>Home</title>
+	<link rel="stylesheet" href="css\styles.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<!-- font links-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+	<!--AUDIOWIDE FONT-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Caveat+Brush&family=Chewy&family=Days+One&family=Holtwood+One+SC&family=Knewave&family=Sigmar+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Fjalla+One&family=Russo+One&family=Sigmar+One&family=Titan+One&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Concert+One&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Lilita+One&display=swap" rel="stylesheet">
+	<!-- links fro slideshow-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
+	<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<style>
+		.slick-next:before, .slick-prev:before {
+			font-size: 50px;
+			line-height: 1;
+			opacity: .75;
+			color: #fff;
+			background-color:none;
+		}
+
+		.slick-dots li button:before {
+			font-size: 30px;
+			margin:20px;
+			line-height: 30px;
+			position: absolute;
+			width: 40px;
+			background-color:none;
+			height: 20px;
+			content: '•';
+			text-align: center;
+			opacity: .25;
+			color: #000;
+		}
+
+		.footer{
+			height:500px;
+			background-image: url('images/footer.png');
+			background-repeat:no-repeat;
+			background-size:cover;
+		}
+		.fa-instagram {
+			background: white;
+			color: purple;
+			border-radius:50px;
+			height:33px;
+		}
+
+		.fa-facebook {
+			background: white;
+			color: purple;
+			border-radius:50px;
+			height:33px;
+		}
+
+		.fa-twitter {
+			background: white;
+			color: purple;
+			border-radius:50px;
+			height:33px;
+		}
+
+		.fa-snapchat-ghost {
+			background: white;
+			color: purple;
+			border-radius:50px;
+			height:33px;
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		}
+
+
+		.fa {
+
+			padding: 15px;
+			font-size: 33px;
+			width: 30px;
+			text-align: center;
+			text-decoration: none;
+			margin: 5px 22px;
+			margin-top:300px;
+		}
+
+
+		.fa:hover {
+			opacity: 0.7;
+		}
+
+	</style>
+
+
+</head>
+<body>
+	<div class = "background1">
+		<div class = "header1">
+			<div class = "progress-container">
+				<div class = "progress-bar" id = "pb">
+				</div>
+			</div>
+		</div>
+
+		<?php
+		//Pulls the links from the nav.php page and places them in the navigation div
+		require "nav-home.php" //'require' is 100% needed for the site to run 
+		?>
+		<!--<div id="main2" class = "main2" style ="margin-top:70px;">
+<div class = "slideshow-container">
+<div class="main-slider">
+<div class="mySlides fade" id = "s1">
+</div>
+</div>
+</div>
+</div>-->
+		<div class = "text" style="background-image:url('images/home-page-img2.png'); background-repeat: no-repeat;background-size:100% 100%;;height:970px;">
+			<!--background-image: url('images/home-page-img2.png'); background-repeat: no-repeat;background-size:100% 100%; -->
+			<div class = "text1a">
+				<h1>F E E L</h1>
+				<break></break>
+				<h1>T H E</h1>
+				<break></break>
+				<h1>B E A T</h1>
+			</div>
+			<div class = "text1b">
+				<h3>L I V E</h3>
+				<break></break>
+				<h3>T H E</h3>
+				<break></break>
+				<h3>M U S I C</h3>
+			</div>
+			<p>Welcome <?php echo htmlspecialchars($un_name);?>!</p>
+		</div>
+
+		<div class = "back-to-top">
+			<a href = "#top"><img src = "images/back_top.png"></a>
+		</div>
+	</div>
+	<div class="slider-container-genre" style = "bacground-color:909090;">
+		<h2>Genres</h2>
+		<button class="arrow11 prev">&lt;</button>
+		<div class="slider11">
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images/"></div>
+			</div>
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images/"></div>
+			</div>
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images"></div>
+			</div>
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images"></div>
+			</div>
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images"></div>
+			</div>
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images"></div>
+			</div>
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images"></div>
+			</div>
+			<div class="slide12">
+				<div class="div11" style = ""><img src="images"></div>
+			</div>
+		</div>
+		<button class="arrow11 next">&gt;</button>
+		<div class="indicators">
+			<span class="dot11 activeclass" data-slide="0"></span>
+			<span class="dot11" data-slide="1"></span>
+			<span class="dot11" data-slide="2"></span>
+			<span class="dot11" data-slide="3"></span>
+			<span class="dot11" data-slide="4"></span>
+			<span class="dot11" data-slide="5"></span>
+			<span class="dot11" data-slide="6"></span>
+			<span class="dot11" data-slide="7"></span>
+		</div>
+	</div>
+
+	<div class = "spotify-songs">
+		<div class = "genre1">
+			<div class="genre1a" data-aos="fade-right"  data-aos-duration="1000">
+				<div class="genre11">
+					<h1>Types Of Genres</h1>
+				</div>
+				<div class="genre22">
+					<h3>Music genres are vibrant categories that capture the essence of sound and culture. From the rhythmic beats of hip-hop, where lyrical storytelling thrives, to the grand orchestras of classical music, each genre tells its own story. Folk music resonates with tradition, weaving narratives through acoustic melodies, while rock and its rebellious spirit electrify listeners with driving rhythms and powerful guitar riffs. Country music, with its heartfelt twang, evokes images of love and the open road. Electronic Dance Music (EDM) pulses with energy, inviting everyone to the dance floor, while pop music constantly evolves, shaping trends and connecting generations. Heavy metal screams defiance with aggressive riffs, while jazz celebrates improvisation, inviting spontaneous creativity. Lastly, Rhythm and Blues blends soulful melodies with rich emotional depth. Together, these genres create a rich tapestry of musical expression that reflects the diverse human experience.</h3>
+				</div>
+			</div>
+			<div class="genre1b" data-aos="fade-left"  data-aos-duration="1000">
+				<div class="genre1ba">
+					<div class="genre1ba1"> 
+						<!--<img src="images/music1.avif">-->
+					</div>
+					<div class="genre1ba2">
+
+					</div>
+				</div>
+				<div class="genre1bb">
+					<div class="genre1bb1">
+
+					</div>
+					<div class="genre1bb2">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class = "artists">
+			<section>
+				<div class="rt-cont">
+
+					<div class="col-rt-12">
+						<div class="Scriptcontent">
+
+							<div class="cont">
+								<h2>Artist</h2>
+								<div class="wgh-slider">
+									<input class="ns" type="radio" id="slide-1" name="slider"/>
+									<input class="ns" type="radio" id="slide-2" name="slider"/>
+									<input class="ns" type="radio" id="slide-3" name="slider" checked="checked"/>
+									<input class="ns" type="radio" id="slide-4" name="slider"/>
+									<input class="ns" type="radio" id="slide-5" name="slider"/>
+									<div class="viewport">
+										<div class="viewbox">
+											<div class="wcont">
+												<div class="sitem">
+													<div class="sitem_i">
+														<figure class="sitem-f"><img class="sitem-f_i" src="#" style = "background-color:#434343;"alt="The 5th Exotic"/>
+															<figcaption class="sitem-f_c"><h1>Hello</h1></figcaption>
+														</figure>
+														<label class="sitem_t" for="slide-1" title="Show product 1"></label>
+													</div>
+												</div>
+												<div class="sitem">
+													<div class="sitem_i">
+														<figure class="sitem-f"><img class="sitem-f_i"src="#" style = "background-color:#434343;" alt="The 5th Exotic"/>
+															<figcaption class="sitem-f_c"><h1>Hello</h1></figcaption>
+														</figure>
+														<label class="sitem_t" for="slide-2" title="Show product 2"></label>
+													</div>
+												</div>
+												<div class="sitem">
+													<div class="sitem_i">
+														<figure class="sitem-f"><img class="sitem-f_i" src="#" style = "background-color:#434343;" alt="The 5th Exotic"/>
+															<figcaption class="sitem-f_c"><h1>Hello</h1></figcaption>
+														</figure>
+														<label class="sitem_t" for="slide-3" title="Show product 3"></label>
+													</div>
+												</div>
+												<div class="sitem">
+													<div class="sitem_i">
+														<figure class="sitem-f"><img class="sitem-f_i" src="#" style = "background-color:#434343;" alt="The 5th Exotic"/>
+															<figcaption class="sitem-f_c"><h1>Hello</h1></figcaption>
+														</figure>
+														<label class="sitem_t" for="slide-4" title="Show product 4"></label>
+													</div>
+												</div>
+												<div class="sitem">
+													<div class="sitem_i">
+														<figure class="sitem-f"><img class="sitem-f_i" src="#" style = "background-color:#434343;" alt="RYSY - Traveler LP"/>
+															<figcaption class="sitem-f_c"><h1>Hello</h1></figcaption>
+														</figure>
+														<label class="sitem_t" for="slide-5" title="Show product 5"></label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+		<div class = "footer">
+			<center>
+				<a href="#" class="fa fa-instagram"></a>
+				<a href="#" class="fa fa-snapchat-ghost"></a>
+				<a href="#" class="fa fa-facebook"></a>
+				<a href="#" class="fa fa-twitter"></a>
+			</center>
+		</div>
+		<script >
+			$('.slider-for').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				arrows: false,
+				fade: true,
+				asNavFor: '.slider-nav' });
+			$('.slider-nav').slick({
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				asNavFor: '.slider-for',
+				dots: true,
+				focusOnSelect: true });
+		</script>
+		<script>
+			// Initialize a variable to keep track of the current slide index.
+			let slideIndex = 1;
+
+			// Call the function 'showSlides' to display the first slide when the page loads.
+			showSlides(slideIndex);
+
+			// Function to display the slides based on the provided slide index 'n'.
+			function showSlides(n) {
+				let i;
+				// Get all elements with the class name "mySlides" and store them in the 'slides' variable.
+				let slides = document.getElementsByClassName("mySlides");
+
+
+				// Hide all slides by setting their 'display' style property to "none".
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+
+
+				// Display the slide with the current slide index by setting its 'display' style property to "block".
+				slides[slideIndex - 1].style.display = "block";
+
+			}
+		</script>
+
+		<script>
+			//When you scrol on the window it calls a function
+			window.onscroll = function(){progressbar()};
+			function progressbar(){
+				var x = document.body.scrollTop || document.documentElement.scrollTop; //what this variable is doing, like scrolling from top to bottom, height across
+				var h = document.documentElement.scrollHeight - document.documentElement.clientHeight; //height vertical
+				var s =(x/h) * 100; //calculating the percentage of both heights, if top is 10% then vertical is 10% as well
+				document.getElementById("pb").style.width = s + "%"; //links/attacth to the html at the top through the id "pb"
+			}
+		</script>
+
+
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				let currentIndex = 0;
+				const slides = document.querySelectorAll('.slide12');
+				const dots = document.querySelectorAll('.dot11');
+				const totalSlides = slides.length;
+
+				const showSlide = (index) => {
+					if (index >= totalSlides) {
+						currentIndex = 0;
+						index = 0;
+					} else if (index < 0) {
+						currentIndex = totalSlides - 1;
+						index = totalSlides - 1;
+					}
+
+					const offset = -index * 8.2; 
+					document.querySelector('.slider11').style.transform = `translateX(${offset}%)`;
+
+					dots.forEach((dot, i) => {
+						dot.classList.remove('activeclass');
+						if (i === index) {
+							dot.classList.add('activeclass');
+						}
+					});
+				};
+
+				const nextSlide = () => {
+					currentIndex = (currentIndex + 1) ;
+					showSlide(currentIndex);
+				};
+
+				const prevSlide = () => {
+					currentIndex = (currentIndex - 1 + totalSlides);
+					showSlide(currentIndex);
+				};
+
+				dots.forEach((dot, index) => {
+					dot.addEventListener('click', () => {
+						currentIndex = index;
+						showSlide(currentIndex);
+					});
+				});
+
+				document.querySelector('.next').addEventListener('click', nextSlide);
+				document.querySelector('.prev').addEventListener('click', prevSlide);
+
+				showSlide(currentIndex);
+			});
+		</script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-76614800-1');
+		</script>
+		<script>
+			AOS.init();
+		</script>
+		</body>
+	</html>
