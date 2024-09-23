@@ -1,0 +1,199 @@
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+		<meta name = "Keywords" content = "Gannet Beach Adventures, birds, NZ"/>
+		<meta name = "Author" content = "Samia Jabbar"/>
+		<meta name = "Description" content = "Home page, gannet beach adventures"/>
+		<link rel="icon" type="image/x-icon" href="images/bird1.ico">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <title>Home</title>
+        <link rel="stylesheet" href="css/index_style.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	
+		
+		<!-- font links-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&family=Lilita+One&display=swap" rel="stylesheet">
+
+	</head>
+    <body>
+		<!--
+        
+			-->
+			
+            
+            <div class = "top-bar">
+				<img src="images/tclogo.png">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="#">Outdoors Activities</a>
+                            <ul>
+                                <li><a href="High_Ropes.html">High Ropes</a></li>
+                                <li><a href="">Paintball</a></li>
+                                <li><a href="">H2o Exterem</a></li>
+                                <li><a href="">Mt Kaukau</a>
+                                    <ul>
+                                        <li><a href="">Sub-item</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.php">Information</a></li>
+                        <li><a href="form.php">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                
+                <!--Start of burger menu code-->
+                <div id="menuArea" class = "menuArea">
+                    <input type="checkbox" id="menuToggle">
+
+                    <label for="menuToggle" class="menuOpen">
+                        <div class="open"></div>
+                    </label>
+
+                    <div class="menu menuEffects">
+                        <label for="menuToggle"></label>
+                        <div class="menuContent">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Community Services</a></li>
+                                <li><a href="#">Outdoors Activities</a></li>
+                                <li><a href="#">MENU 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of burger menu code -->
+            </div>
+		<div id="main2" class = "main2" style = "background-color:gray;">
+            <div class = "slideshow-container">
+                <div class="main-slider">
+                    <div class="mySlides fade"id = "s1">
+
+                    </div>
+                    <div class="mySlides fade" id = "s2">
+  
+                    </div>
+                    <div class="mySlides fade" id = "s3">
+
+                    </div>
+                    <div class="dots_section">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+				
+            </div>
+        </div>
+		<div class = "main-div">
+			<div class = "text1" data-aos="slide-right" data-aos-duration="1500">
+				<p>Where else in the world can you jump on the back of a trailer and get towed along the beach by a vintage American tractor to a bird colony? Our unique coastal adventure awaits you 					… Our season is in full-swing – book your visit online now!
+				</p>
+				<p>Our tour operates in an outdoor environment that is always changing, where there are inherent risks and where conditions can alter quickly. The tour route can be subject to 					unpredictable slips, rockfalls, rough and rugged terrain and other naturally occurring hazards. The recent QRA report (jointly commissioned by Hastings District Council and Dept. of 					Conservation) states the safest way to experience the beach route to Cape Kidnappers is with our organised tour to ‘take advantage of local knowledge and reduced exposure time’.
+				</p>
+			</div>
+			<div class = "image1" data-aos="slide-left" data-aos-duration="1500">
+				<img src = "images/place4.jpg">
+			</div>
+		</div>
+		<div class = "main-div2">
+			<div class = "image2" data-aos="slide-right" data-aos-duration="1500" style = "background-color:orange;">
+				<img src = "images/birds9.jpg">
+			</div>
+			<div class = "text2" data-aos="slide-left" data-aos-duration="1500">
+				<p>Come on a unique, fun eco-experience tour, in a beautiful and iconic part of the Hawke’s Bay region. Our ‘one of a kind’ tour provides a 4-hour mild adventure, travelling along the majestically rugged coastline from Clifton to Cape Kidnappers, on vintage American tractors. The Cape is not only home to four gannet colonies which bustle with the daily rituals of these amazing seabirds, but is one of the most geologically fascinating parts of our country. The trip is suitable for all ages and fitness levels, and our experienced guides have safely transported passengers and helped them enjoy this amazing area for 70 years.
+				</p>
+			</div>
+
+		</div>
+		<div class = "footer">
+			<div class = "footer2">
+				<img src ="images/g-logo.png">
+				<h1> © Gannet Beach Adventures 2024, all rights reserved.</h1>
+			</div>
+			
+		</div>
+        <script>
+            // Initialize a variable to keep track of the current slide index.
+            let slideIndex = 1;
+            
+            // Call the function 'showSlides' to display the first slide when the page loads.
+            showSlides(slideIndex);
+            
+            
+            //This function plusSlides is called when the user clicks on the next or previous buttons.
+            //It receives a parameter n, which indicates the number of slides to move forward (n is positive) or backward (n is negative).
+            //slideIndex += n increments or decrements slideIndex by n, effectively moving to the next or previous slide.
+            //Then, it calls the showSlides function with the updated slideIndex.
+            function plusSlides(n) {
+              // Call 'showSlides' with an updated slide index by adding 'n'.
+              showSlides(slideIndex += n);
+              //In JavaScript, the += operator adds the value of n to the variable 
+              //slideIndex. So, slideIndex += -1 effectively decrements slideIndex 
+              //by 1, moving to the previous slide.
+			
+            }
+            
+            //This function currentSlide is called when the user clicks on one of the navigation dots.
+            //It receives a parameter n, which represents the index of the slide the user wants to jump to.
+            //slideIndex = n sets the value of slideIndex to n, indicating the slide the user wants to navigate to.
+            //Then, it calls the showSlides function with the updated slideIndex.
+            function currentSlide(n) {
+              // Set the current slide index to the provided 'n'.
+              showSlides(slideIndex = n);
+            }
+            
+            // Function to display the slides based on the provided slide index 'n'.
+            function showSlides(n) {
+              let i;
+              // Get all elements with the class name "mySlides" and store them in the 'slides' variable.
+              let slides = document.getElementsByClassName("mySlides");
+            
+              // Get all elements with the class name "dot" and store them in the 'dots' variable.
+              let dots = document.getElementsByClassName("dot");
+            
+              // Check if 'n' (the requested slide index) is greater than the total number of slides.
+              if (n > slides.length) {
+                // If 'n' is greater, reset the slide index to the first slide.
+                slideIndex = 1;
+              }
+              
+              // Check if 'n' is less than 1 (less than the first slide).
+              if (n < 1) {
+                // If 'n' is less, set the slide index to the last slide.
+                slideIndex = slides.length;
+              }
+            
+              // Hide all slides by setting their 'display' style property to "none".
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+            
+              // Remove the "active" class from all dots, effectively resetting their appearance.
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+            
+              // Display the slide with the current slide index by setting its 'display' style property to "block".
+              slides[slideIndex - 1].style.display = "block";
+            
+              // Add the "active" class to the dot corresponding to the current slide.
+              dots[slideIndex - 1].className += " active";
+            }
+            </script>
+			<script>
+			  AOS.init();
+			</script>
+            
+
+    </body>
+</html>
